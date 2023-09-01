@@ -15,8 +15,8 @@ const filme = {
 		]
 }
 
-console.log(filme.elenco[0]) // "Matheus Nachtergaele", "Selton Mello", "Denise Fraga", "Virginia Cavendish"
-console.log(filme.elenco[filme.elenco.length - 1]) // {canal: "Telecine", horario: "21h"}, {canal: "Canal Brasil", horario: "19h"}, {canal: "Globo", horario: "14h"}
+console.log(filme.elenco[0]) // "Matheus Nachtergaele"
+console.log(filme.elenco[filme.elenco.length - 1]) // "Virginia Cavendish"
 console.log(filme.transmissoesHoje[2]) // {canal: "Globo", horario: "14h"}
 
 // 2)
@@ -58,7 +58,7 @@ console.log(minhaFuncao(pessoa, "altura")) // undefined
     }
 
     function imprimeMensagem(objeto) {
-        console.log(`"Eu sou ${objeto.nome}, mas pode me chamar de: ${objeto.apelido[0]}, ${objeto.apelido[1]} ou ${objeto.apelido[1]}"`)
+        console.log(`"Eu sou ${objeto.nome}, mas pode me chamar de: ${objeto.apelido[0]}, ${objeto.apelido[1]} ou ${objeto.apelido[2]}"`)
     }
     imprimeMensagem(infoPessoa)
 
@@ -84,14 +84,13 @@ console.log(minhaFuncao(pessoa, "altura")) // undefined
         profissao: "Professor"
     }
 
-/*
-a) Crie dois objetos diferentes com as seguintes propriedades: nome, idade e profissão. 
-
-b) Escreva uma função que receba um objeto de cada vez e retorne um array com as seguintes informações:
-
-1. O valor de `nome`
-2. O numero de caracteres do valor `nome`
-3. O valor de `idade`
-4. O valor de `profissão`
-5. O numero de caracteres do valor `profissão`
-*/
+    //b)
+    function criaArrayObj(objeto) {
+        let arrayObjt = []
+        arrayObjt.push(objeto.nome, objeto.nome.length, objeto.idade, objeto.profissao, objeto.profissao.length)
+        return arrayObjt
+    }
+    console.log(criaArrayObj(primeiraPessoa))
+    console.log(criaArrayObj(segundaPessoa))
+    
+    
